@@ -139,3 +139,59 @@ where
         ))
     }
 }
+
+impl<A, B, C, D, E, F, G, H, I> Decode for (A, B, C, D, E, F, G, H, I)
+where
+    A: Decode,
+    B: Decode,
+    C: Decode,
+    D: Decode,
+    E: Decode,
+    F: Decode,
+    G: Decode,
+    H: Decode,
+    I: Decode,
+{
+    fn decode<_D: Decoder>(mut decoder: &mut _D) -> Result<Self, DecodeError> {
+        Ok((
+            A::decode(&mut decoder)?,
+            B::decode(&mut decoder)?,
+            C::decode(&mut decoder)?,
+            D::decode(&mut decoder)?,
+            E::decode(&mut decoder)?,
+            F::decode(&mut decoder)?,
+            G::decode(&mut decoder)?,
+            H::decode(&mut decoder)?,
+            I::decode(&mut decoder)?,
+        ))
+    }
+}
+
+impl<A, B, C, D, E, F, G, H, I, J> Decode for (A, B, C, D, E, F, G, H, I, J)
+where
+    A: Decode,
+    B: Decode,
+    C: Decode,
+    D: Decode,
+    E: Decode,
+    F: Decode,
+    G: Decode,
+    H: Decode,
+    I: Decode,
+    J: Decode,
+{
+    fn decode<_D: Decoder>(mut decoder: &mut _D) -> Result<Self, DecodeError> {
+        Ok((
+            A::decode(&mut decoder)?,
+            B::decode(&mut decoder)?,
+            C::decode(&mut decoder)?,
+            D::decode(&mut decoder)?,
+            E::decode(&mut decoder)?,
+            F::decode(&mut decoder)?,
+            G::decode(&mut decoder)?,
+            H::decode(&mut decoder)?,
+            I::decode(&mut decoder)?,
+            J::decode(&mut decoder)?,
+        ))
+    }
+}
